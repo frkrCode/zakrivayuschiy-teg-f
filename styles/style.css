@@ -14,9 +14,10 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font, sans-serif);
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" var(--font-weight-card);
   background-image: var(--bg-gradient);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
@@ -24,29 +25,32 @@
 }
 
 .header {
-  height: clamp(375px, 100vw, 370px);
-  border: 2px solid #000;
-  margin: 0 auto 100px;
+  border: 2px solid var(--accent-color);
+  margin: 100px auto 98px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-main-color);
+  padding-block: clamp(122px, calc(0.75vw + 119.2px), 130px);
+  padding-inline: clamp(16px, calc(10vw - 21.5px), 122.5px);
 }
 
 .title {
   font-family: var(--accent-font);
-  font-size: clamp(49px, 50px, 65px);
+  font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+  padding-block-end: 20px;
 }
 
 .subtitle {
   font-family: var(--accent-font);
-  font-size: clamp(14px, 18px, 23px);
+  font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+  line-height: 100%;
+  text-transform: uppercase;
 }
 
 .card {
   width: var(--container-width);
-  min-height: 200px;
   border: 2px solid var(--accent-color);
   margin: 0 auto 50px;
   background-color: var(--bg-main-color);
@@ -54,9 +58,11 @@
 
 .card_title {
   font-size: 18px;
-  font-weight: 785;
+  font-variation-settings: "wght" var(--font-weight-title);
+  font-weight: var(--font-weight-title);
   border-block-end: solid 2px var(--accent-color);
   padding: 4px 10px;
+  line-height: 1.2;
 }
 
 .card_image {
@@ -113,17 +119,11 @@
 @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
   .card_label {
     text-shadow: none;
-    -webkit-text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px var(--bg-main-color);
     text-stroke: 1px var(--bg-main-color);
     paint-order: stroke fill;
   }
-}
-.button:focus {
-  outline: none;
-}
 
-.button:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .button {
@@ -163,9 +163,19 @@
   background-color: var(--bg-main-color);
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
 .card_text {
   font-size: 18px;
   line-height: 21px;
+  font-variation-settings: "wght" var(--font-weight-card);
+  font-weight: var(--font-weight-card);
 }
 
 .card__like-button {
@@ -203,7 +213,8 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 20px;
+  padding-block: 17px;
+  padding-inline: 20px;
 }
 
 .floppy-icon {

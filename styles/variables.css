@@ -1,8 +1,8 @@
 :root {
   --main-font: "Inter", sans-serif;
   --accent-font: "PressStart2P", fantasy;
-  --font-size-card: 400;
-  --font-size-title: 785;
+  --font-weight-card: 400;
+  --font-weight-title: 785;
   --container-width: clamp(
     375px,
     100vw,
